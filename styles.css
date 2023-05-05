@@ -1,0 +1,170 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html, body {
+    height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: Montserrat, sans-serif;
+    color: hsl(228, 12%, 48%);
+    background-color: hsl(30, 38%, 92%);
+}
+
+/*
+    6. Improve media defaults
+  */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root, #__next {
+    isolation: isolate;
+}
+
+:root {
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(212, 21%, 14%);
+    --green-color: hsl(158, 36%, 37%);
+    --darkGreen-color: hsl(158, 36%, 20%);
+    --crimson-color: hsl(348, 83%, 47%);
+    --ff-font: Fraunces, sans-serif;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article {
+    background-color: var(--white-color);
+    margin: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+.article__container {
+    display: grid;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+}
+
+.article__category {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.article__title {
+    font-family: var(--ff-font);
+    color: var(--black-color);
+    line-height: 1.1;
+    font-size: 30px;
+}
+
+.article__description {
+    font-size: 14px;
+}
+
+.article__prices {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.prices__new {
+    font-family: var(--ff-font);
+    font-size: 30px;
+    color: var(--green-color);
+}
+
+.prices__old {
+    text-decoration: line-through;
+}
+
+.article__button {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    transition: background 1s;
+}
+
+.article__button:hover {
+    background-color: var(--darkGreen-color);
+}
+
+.article__button:focus {
+    background-color: var(--darkGreen-color);
+}
+
+@media (min-width: 600px) {
+    .article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    padding-top: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--crimson-color);
+    transition: filter 1s;
+}
+
+.footer a:hover {
+    filter: brightness(60%);
+}
